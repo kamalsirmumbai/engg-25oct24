@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title> Engineering App by Kamal javar </title>
+		<style>
+			* { font-size: 40px; }
+			body { background-color: lightblue; }
+		</style>
+	</head>
+	<body>	
+	<center>
+		<h1> Engineering App </h1>
+		<form onsubmit="show()">
+			<label> Name </label>
+			<input type="text"	id="name"	placeholder="enter ur name " />
+			<br/><br/>
+			<label> Select Engg Year </label>
+			<select id="year">
+				<option value="fe">FE</option>
+				<option value="se">SE</option>
+				<option value="te">TE</option>
+				<option value="be">BE</option>
+			</select>
+			<br/><br/>
+			<input type="submit" />
+		</form>
+			<h2 id="msg" />
+
+		<script>
+			function show()
+			{
+				event.preventDefault();
+
+				let name = document.getElementById("name");
+				let year = document.getElementById("year");
+				let msg = document.getElementById("msg");
+
+				if (name.value === "")
+				{
+					alert("please enter name");
+					msg.innerHTML = "";
+					name.focus();
+					return;
+				}
+		
+				if (! name.value.match("^[A-Za-z ]+$"))
+				{
+					alert("name shud contain only alphabets");
+					msg.innerHTML = "";
+					name.focus();
+					return;
+				}
+
+				let ans = "name = " + name.value + " year = " + year.value;
+				msg.innerHTML = ans;
+			}
+		</script>
+	</center>
+	</body>
+</html>
+
+
+
+
+
+
+
